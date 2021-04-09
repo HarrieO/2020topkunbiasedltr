@@ -350,7 +350,7 @@ def generate_squashed_clicks(logging_policy,
       clicks_generated += c_i.size
 
       n_outside = max(n_docs-cutoff+1,1)
-      if cutoff < n_docs and 'observational' not in logging_policy:
+      if cutoff < n_docs and 'oblivious' not in logging_policy:
         denom = np.ones(c_i.shape)
         denom[np.greater_equal(inv_rank[c_i], cutoff-1)] = n_outside
         ave_weights[d_i] = denom/prop[c_i]
